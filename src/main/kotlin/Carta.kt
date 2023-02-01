@@ -1,4 +1,3 @@
-import kotlin.random.Random
 class Carta(numero: Int, palo:Char) {
     var numero = numero
         set(valor){
@@ -11,7 +10,7 @@ class Carta(numero: Int, palo:Char) {
         get():Int{
             return field
         }
-    var palo = palo
+    var Palo = palo
         set(valor){
             if (valor=='c' || valor == 'p' || valor == 'r' || valor == 't'){
                 field = valor
@@ -23,15 +22,15 @@ class Carta(numero: Int, palo:Char) {
             return field
         }
 
-    constructor(otraCarta: Carta):this(otraCarta.numero, otraCarta.palo){}
+    constructor(otraCarta: Carta):this(otraCarta.numero, otraCarta.Palo){}
 
     fun mostrar_carta(){
         var paloMostrar = ""
         when {
-            palo ==  'c' -> paloMostrar = "Corazones"
-            palo == 'r' -> paloMostrar = "Rombos"
-            palo == 't' -> paloMostrar = "Tréboles"
-            palo == 'p' -> paloMostrar = "Picas"
+            Palo ==  'c' -> paloMostrar = "Corazones"
+            Palo == 'r' -> paloMostrar = "Rombos"
+            Palo == 't' -> paloMostrar = "Tréboles"
+            Palo == 'p' -> paloMostrar = "Picas"
         }
         when(numero){
             in 2..10-> println("$numero de $paloMostrar")
@@ -66,7 +65,7 @@ class Carta(numero: Int, palo:Char) {
             otraCarta.mostrar_carta()
             return 1
         } else {//número iguales
-            if (this.palo > otraCarta.palo) {
+            if (this.Palo > otraCarta.Palo) {
                 print("La carta mayor es: ")
                 this.mostrar_carta()
                 return -1
@@ -77,5 +76,11 @@ class Carta(numero: Int, palo:Char) {
             }
         }
     }
+
+    override fun toString(): String {
+        return "Carta()"
+    }
+
+
 }
 
